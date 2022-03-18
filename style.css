@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+}
+
+.contorno {
+    border: 2px solid gray;
+    height: 200px;
+    width: 70vw;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgb(179, 27, 27);
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    margin-right: 10px;
+}

@@ -1,7 +1,6 @@
 let minutesView = document.querySelector(".minutes");
 let secondsView = document.querySelector(".seconds");
 let millesimalView = document.querySelector(".millesimal");
-git
 let millesimal = 0;
 let seconds = 0;
 let minutes = 0;

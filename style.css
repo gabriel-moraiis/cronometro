@@ -30,6 +30,7 @@ body {
    position: relative;
    width: 150px;
    justify-content: center;
+   border-radius: 10px;
    
 }
 

@@ -5,7 +5,6 @@ let millesimal = 0;
 let seconds = 0;
 let minutes = 0;
 var controler = false;
-var time = "10";
 
 var update = setInterval(function(){
     if(controler){

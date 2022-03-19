@@ -4,8 +4,11 @@ let millesimalView = document.querySelector(".millesimal");
 let millesimal = 0;
 let seconds = 0;
 let minutes = 0;
+var controler = false;
 
 function update(){
+    if(controler){
+
     if(millesimal < 99){
         millesimal++
     }
@@ -30,12 +33,12 @@ function update(){
     }
     
     millesimalView.innerHTML = millesimal;
-    
-    
-
+}else if(!controler){ 
+millesimal = 0;
+seconds = 0;
+minutes = 0;
+}    
 }
-
-
 
 function events(){
     let start = document.querySelector(".start");
@@ -48,26 +51,29 @@ function events(){
    
 }
 
-function pressPause(){
-    clearInterval(crono)
-}
-
 function pressStart(){
-    
-    crono = setInterval(update, 10)
-    
+    controler = true
+   setInterval(update,10);
+   
 }
 
-function init(){
+function pressPause(){
+   controler = false
+}
+
+function clearView(){
     minutesView.innerHTML = "00:"
     secondsView.innerHTML = "00:"
     millesimalView.innerHTML = "00"
-    events()
-      
 }
 
 
 
+function init(){
+    controler = false;
+    clearView();
+    events()
+}
 
 init();
 

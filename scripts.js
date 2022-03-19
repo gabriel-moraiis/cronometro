@@ -5,8 +5,9 @@ let millesimal = 0;
 let seconds = 0;
 let minutes = 0;
 var controler = false;
+var time = "10";
 
-function update(){
+var update = setInterval(function(){
     if(controler){
 
     if(millesimal < 99){
@@ -33,12 +34,9 @@ function update(){
     }
     
     millesimalView.innerHTML = millesimal;
-}else if(!controler){ 
-millesimal = 0;
-seconds = 0;
-minutes = 0;
-}    
 }
+},10);
+
 
 function events(){
     let start = document.querySelector(".start");
@@ -46,20 +44,26 @@ function events(){
     let reset = document.querySelector(".reset");
     start.addEventListener("click", pressStart);
     pause.addEventListener("click",pressPause)
-    reset.addEventListener("click", init);
-
-   
+    reset.addEventListener("click", pressReset);
 }
 
 function pressStart(){
-    controler = true
-   setInterval(update,10);
-   
+    controler = true 
 }
 
 function pressPause(){
    controler = false
 }
+
+function pressReset(){
+    controler = false;
+    millesimal = 0;
+    seconds = 0;
+    minutes = 0;
+    clearView();
+}
+    
+
 
 function clearView(){
     minutesView.innerHTML = "00:"
@@ -70,7 +74,6 @@ function clearView(){
 
 
 function init(){
-    controler = false;
     clearView();
     events()
 }
